@@ -18,6 +18,7 @@ setup(
     url='http://www.justinmitchel.com/',
     author='Justin Mitchel',
     author_email='hello@teamcfe.com',
+    install_requires=['django-allauth => 0.25.2'],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
