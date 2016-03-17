@@ -22,13 +22,13 @@ Quick start
 
 1. Install via "pip"::
 
-    pip install django-hackgrowth
+    pip install django-hackref
 
-2. Add "hackgrowth" to your INSTALLED_APPS setting like this::
+2. Add "hackref" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
         ...
-        'hackgrowth',
+        'hackref',
     ]
 
 3. Include the polls URLconf in your project urls.py like this::
