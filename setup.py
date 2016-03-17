@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-hackref',
-    version='0.1',
+    version='0.1.1',
     packages=find_packages(),
     include_package_data=True,
     license='MIT License',  # MIT license
@@ -18,7 +18,9 @@ setup(
     url='http://www.justinmitchel.com/',
     author='Justin Mitchel',
     author_email='hello@teamcfe.com',
-    install_requires=['django-allauth => 0.25.2'],
+    install_requires=['Django >= 1.7',
+                      'django-allauth >= 0.25.0'
+                      ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
