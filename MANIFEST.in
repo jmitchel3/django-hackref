@@ -1,5 +1,9 @@
 include LICENSE
 include README.rst
+include REQUIREMENTS.txt
+
+recursive-include hackref *.html *.txt *.xml *.po *.mo *.js
+recursive-include docs Makefile conf.py *.rst
 recursive-include hackref/static *
 recursive-include hackref/templates *
 recursive-include hackref/templatetags *
