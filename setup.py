@@ -13,9 +13,9 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     license='MIT License',  # example license
-    description='A Django app to monitor and track user referrals.',
+    description='A Django app to create, monitor and track user referral links',
     long_description=README,
-    url='https://www.justinmitchel.com/',
+    url='http://www.justinmitchel.com/',
     author='Justin Mitchel',
     author_email='hello@teamcfe.com',
     classifiers=[

@@ -1,8 +1,8 @@
 =====
-Django Hack Referrals hackref
+django-hackref
 =====
 
-Hack Referrals is a Django app to monitor and track user referrals.
+Hack Referrals is a Django app to create, monitor and track user referral links.
 
 
 Quick start
