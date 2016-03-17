@@ -6,7 +6,6 @@ python:
  - "3.3"
  - "3.4"
  - "3.5"
- - "pypy"
 env:
   matrix:
    - DJANGO="Django<1.8"
@@ -32,7 +31,7 @@ matrix:
 branches:
  only:
   - master
-script: coverage run manage.py test hackref
+script: coverage run manage.py test allauth
 after_success:
   - coverage report
   - coveralls
