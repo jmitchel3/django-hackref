@@ -9,7 +9,7 @@ Welcome to django-hackref!
    :target: http://travis-ci.org/jmitchel3/django-hackref
 
 .. image:: https://img.shields.io/pypi/v/django-hackref.svg
-    : target: https://pypi.python.org/pypi/django-hackref
+    :target: https://pypi.python.org/pypi/django-hackref
 
 .. image:: https://coveralls.io/repos/github/jmitchel3/django-hackref/badge.svg?branch=master 
     :target: https://coveralls.io/github/jmitchel3/django-hackref?branch=master
@@ -20,16 +20,20 @@ Hack Referrals is a Django app to create, monitor and track user referral links.
 Quick start
 -----------
 
-1. Add "hackgrowth" to your INSTALLED_APPS setting like this::
+1. Install via "pip"
+
+    pip install django-hackgrowth
+
+2. Add "hackgrowth" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
         ...
         'hackgrowth',
     ]
 
-2. Include the polls URLconf in your project urls.py like this::
+3. Include the polls URLconf in your project urls.py like this::
 
     url(r'^r/', include('hackref.urls')),
 
-3. Run `python manage.py migrate`.
+4. Run `python manage.py migrate`.
 
