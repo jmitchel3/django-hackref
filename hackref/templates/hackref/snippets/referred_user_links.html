@@ -1,0 +1,11 @@
+Total: {{ users.count }}
+<ul>
+{% for user in users %}
+    <li>{% if user.get_absolute_url %}
+        <a href="">{{ user }}</a>
+    {% else %}
+        {{ user }}
+    {% endif %}
+    </li>
+{% endfor %}
+</ul>
