@@ -31,7 +31,7 @@ matrix:
 branches:
  only:
   - master
-script: coverage run manage.py test allauth
+script: coverage run manage.py test hackref
 after_success:
   - coverage report
   - coveralls
