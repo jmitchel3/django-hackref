@@ -12,7 +12,7 @@ setup(
     version='0.1',
     packages=find_packages(),
     include_package_data=True,
-    license='MIT License',  # example license
+    license='MIT License',  # MIT license
     description='A Django app to create, monitor and track user referral links',
     long_description=README,
     url='http://www.justinmitchel.com/',
@@ -21,12 +21,11 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.9',  # replace "X.Y" as appropriate
+        'Framework :: Django :: 1.9',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',  # example license
+        'License :: OSI Approved :: MIT License',  # MIT license
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        # Replace these appropriately if you are stuck on Python 2.
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
@@ -35,4 +34,5 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
+    keywords='django referrals growth marketing',
 )
