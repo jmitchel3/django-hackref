@@ -20,7 +20,7 @@ Hack Referrals is a Django app to create, monitor and track user referral links.
 Quick start
 -----------
 
-1. Install via "pip"
+1. Install via "pip"::
 
     pip install django-hackgrowth
 
