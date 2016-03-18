@@ -10,7 +10,6 @@ except:
 
 from .views import CodeTrackingView
 
-from profiles.views import home
 
 urlpatterns = [
     url(r'^(?P<code>[\w0-9]{0,' + str(code_count) + '})/$', 
