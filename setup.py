@@ -9,13 +9,13 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-hackref',
-    version='0.1.1',
+    version='0.1.2',
     packages=find_packages(),
     include_package_data=True,
     license='MIT License',  # MIT license
     description='A Django app to create, monitor and track user referral links',
     long_description=README,
-    url='http://www.justinmitchel.com/',
+    url='https://github.com/jmitchel3/django-hackref',
     author='Justin Mitchel',
     author_email='hello@teamcfe.com',
     install_requires=['Django >= 1.7',
