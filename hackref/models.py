@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import MultipleObjectsReturned
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import pre_save, post_save
@@ -25,6 +26,10 @@ except ImproperlyConfigured:
     raise ImproperlyConfigured("Django All Auth is required for this project.\nDocs: \
         http://django-allauth.readthedocs.org/en/latest/")
 
+try:
+    from django.contrib.sites.models import Site
+except ImproperlyConfigured:
+    raise ImproperlyConfigured("The Django Sites Framework is required.")
 
 class ReferralCodeClick(models.Model):
     user         = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
@@ -51,6 +56,25 @@ class ReferralLink(models.Model):
     def __str__(self):
         return "%s" %(self.code)
 
+    def get_absolute_url(self):
+        url_namespace = getattr(settings, "HACKREF_URL_NAMESPACE", None)
+        if url_namespace:
+            path = reverse("%s:ref-code-redirect")
+        else:
+            path = reverse("ref-code-redirect")
+        return path
+    
+    @property
+    def get_link(self):
+        domain = Site.objects.get_current().domain
+        link_domain = getattr(settings, "HACKREF_LINK_DOMAIN", domain)
+        path = self.get_absolute_url()
+        is_secure = getattr(settings, "HACKREF_SECURE", False)
+        protocol = "http"
+        if is_secure:
+            protocol = "https"
+        return '%s://%s%s' % (protocol, Site.objects.get_current().domain, path)
+    
 
     def add_one(self, user=None):
         new_click = ReferralCodeClick.objects.create(link=self)
@@ -144,6 +168,7 @@ def create_referral(sender, request, user, *args, **kwargs):
     Use ID and created User to connect created User
     to ReferralLink User. 
     """
+    new_personal_link = ReferralLink.objects.get_or_create(user=user)[0]
     referral_link_id = request.session.get("referral_link_id")
     created_user = user
     if referral_link_id:
